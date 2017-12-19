@@ -1,8 +1,6 @@
 import { Effect, Actions } from '@ngrx/effects';
 import { FETCH_NEW_CHARACTER, SET_CHARACTER, CustomAction } from './app.actions';
-import {
-    compose, combineReducers, ActionReducerMap
-} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState {
     character: string;

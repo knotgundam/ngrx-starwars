@@ -1,3 +1,7 @@
-<p>
-  image-viewer works!
-</p>
+<div [ngSwitch]="character | async">
+  <img style="width: 200px; height: 200px" *ngSwitchCase="'luke'" src="images/luke.jpg">
+  <img style="width: 200px; height: 200px" *ngSwitchCase="'chewbacca'" src="images/chewbacca.jpeg">
+  <img style="width: 200px; height: 200px" *ngSwitchCase="'kyloren'" src="images/kyloren.jpeg">
+  <img style="width: 200px; height: 200px" *ngSwitchCase="'bobafett'" src="images/bobafett.jpg">
+  <img style="width: 200px; height: 200px" *ngSwitchDefault src="images/default.png" alt="">
+</div>
