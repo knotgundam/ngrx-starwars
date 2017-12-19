@@ -6,6 +6,12 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { WeaponViewerComponent } from './weapon-viewer/weapon-viewer.component';
 import { SideViewerComponent } from './side-viewer/side-viewer.component';
 
+import { StoreModule } from '@ngrx/store';
+import { Store } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers } from './app.reducers';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +20,12 @@ import { SideViewerComponent } from './side-viewer/side-viewer.component';
     SideViewerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({ maxAge: 20 }),
   ],
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
